@@ -31,7 +31,7 @@ public class ProfessorService {
 				.orElse(null);
 	}
 	
-	public void removeProfessor(int[]lista) {
+	public void removeProfessor(Integer[]lista) {
 		Arrays.stream(lista).forEach(idProfessor ->{
 			Professor professor = getProfessor(idProfessor);
 			if(professor !=null) {
