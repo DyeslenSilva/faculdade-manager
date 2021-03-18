@@ -33,4 +33,6 @@ public class Professor {
 	
 	@Column
 	private Integer horasTrabalhadas;
+
+	private boolean ativo, inativo;
 }

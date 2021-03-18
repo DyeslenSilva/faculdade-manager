@@ -29,4 +29,6 @@ public class Diretor {
 
 	@Column
 	private String tipoDiretor;
+	
+	private boolean ativo, inativo;
 }

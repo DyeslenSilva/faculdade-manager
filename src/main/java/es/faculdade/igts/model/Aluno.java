@@ -33,4 +33,6 @@ public class Aluno {
 	@Column
 	private Integer semestreLetivo;
 	
+	private boolean ativo, inativo;
+	
 }
