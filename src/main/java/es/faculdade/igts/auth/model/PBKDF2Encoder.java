@@ -25,6 +25,7 @@ public class PBKDF2Encoder implements PasswordEncoder {
 	@Override
 	public String encode(CharSequence cs) {
 		try {
+			int keylength = 0;
 			byte[] result = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512")
 											.generateSecret(new PBEKeySpec(cs.toString().toCharArray(), secret.getBytes(), iteration, keylength))
 											.getEncoded();
@@ -32,8 +33,6 @@ public class PBKDF2Encoder implements PasswordEncoder {
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
 			throw new RuntimeException(ex);
 		}
-		
-		return null;
 	}
 
 	@Override
