@@ -3,9 +3,11 @@ package es.faculdade.igts.webflux.controller;
 import org.atmosphere.config.service.Get;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,5 +38,15 @@ public class ProfessorFluxController {
 	@GetMapping("/professor/{idProfessor}")
 	public Mono<Professor> getProfessor(@PathVariable Integer idProfessor){
 		return professorWebFluxRepo.findById(idProfessor);
+	}
+	
+	@PutMapping("/professor/{idProfessor}")
+	public Mono<Professor> updateProfessor(@PathVariable Integer idProfessor){
+		return professorWebFluxRepo.updateProfessor(idProfessor);
+	}
+	
+	@DeleteMapping("/professor/{idProfessor}")
+	public Mono<Void> deleteProfessor(@PathVariable Integer idProfessor){
+		return professorWebFluxRepo.deleteById(idProfessor);
 	}
 }
