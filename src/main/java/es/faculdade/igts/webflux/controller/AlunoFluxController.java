@@ -1,8 +1,5 @@
 package es.faculdade.igts.webflux.controller;
 
-import javax.ws.rs.Path;
-
-import org.atmosphere.config.service.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
